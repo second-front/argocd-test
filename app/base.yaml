@@ -1,0 +1,28 @@
+global:
+  applicationName: test
+  customerName: customerName
+  impactLevel: il2
+  environment: prd
+  destinationCluster: in-cluster
+  image:
+    defaultImageRegistry: ghcr.io/second-front/hackathon
+argocd:
+  wrapperAppOff: true
+  sourceNamespaces:
+  - "test"
+  - "argocd"
+  - "gw"
+  projectOverride: "default"
+  disableProjectCreation: true
+default:
+
+microservices:
+  hackathon:
+    image:
+      pullPolicy: Always
+    service:
+      type: ClusterIP
+      targetPort: 3000
+    match:
+      - uri:
+          prefix: /
