@@ -83,6 +83,11 @@ kyverno:
 kyvernoPolicies:
   sourceType: helmRepo
   enabled: true
+  values:
+    restrict-volume-types:
+      validationFailureAction: Audit
+    restrict-image-registries:
+      validationFailureAction: Audit
 
 neuvector:
   sourceType: helmRepo
