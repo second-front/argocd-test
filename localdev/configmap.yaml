@@ -97,45 +97,44 @@ addons:
     values:
       argocd-apps:
         applications:
-            applications:
-              - destination:
-                  namespace: gw
-                  server: https://kubernetes.default.svc
-                ignoreDifferences:
-                  - jsonPointers:
-                      - /data
-                      - /stringData
-                    kind: Secret
-                    name: generated-secrets
-                    namespace: gw
-                info:
-                  - name: url
-                    value: https://code.gamewarden.io/
-                name: gamewarden-app-prd
-                namespace: argocd
-                project: gamewarden-app-prd
-                sources:
-                  - helm:
-                      valueFiles:
-                        - $values/app/base.yaml
-                        - $values/app/prd.yaml
-                    path: ./
-                    repoURL: https://github.com/second-front/uchart.git
-                    targetRevision: 1.0.10
-                  - ref: values
-                    repoURL: 'https://github.com/second-front/argocd-test.git'
-                    targetRevision: main
-                syncPolicy:
-                  automated:
-                    prune: true
-                    selfHeal: true
-                  managedNamespaceMetadata:
-                    labels:
-                      istio-injection: enabled
-                  syncOptions:
-                    - CreateNamespace=true
-                    - Validate=false
-                    - RespectIgnoreDifferences=true
+          - destination:
+              namespace: gw
+              server: https://kubernetes.default.svc
+            ignoreDifferences:
+              - jsonPointers:
+                  - /data
+                  - /stringData
+                kind: Secret
+                name: generated-secrets
+                namespace: gw
+            info:
+              - name: url
+                value: https://code.gamewarden.io/
+            name: gamewarden-app-prd
+            namespace: argocd
+            project: gamewarden-app-prd
+            sources:
+              - helm:
+                  valueFiles:
+                    - $values/app/base.yaml
+                    - $values/app/prd.yaml
+                path: ./
+                repoURL: https://github.com/second-front/uchart.git
+                targetRevision: 1.0.10
+              - ref: values
+                repoURL: 'https://github.com/second-front/argocd-test.git'
+                targetRevision: main
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              managedNamespaceMetadata:
+                labels:
+                  istio-injection: enabled
+              syncOptions:
+                - CreateNamespace=true
+                - Validate=false
+                - RespectIgnoreDifferences=true
   metricsServer:
     sourceType: helmRepo
     enabled: auto
