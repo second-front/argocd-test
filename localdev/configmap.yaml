@@ -110,7 +110,39 @@ neuvector:
     k3s:
       enabled: true
 
+sso:
+  client_id: il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps
+  client_secret: "123456789"
+  name: SSO
+  url: https://login.gw.local/auth/realms/gamewarden
+
+
+grafana:
+  values:
+    grafana.ini:
+      auth.generic_oauth:
+        api_url: "https://login.gw.local/auth/realms/gamewarden/protocol/openid-connect/userinfo"
+        auth_url: "https://login.gw.local/auth/realms/gamewarden/protocol/openid-connect/auth"
+        client_id: "il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps" #gitleaks:allow
+        client_secret: "123456789"
+        enabled: true
+        groups_attribute_path: "groups"
+        name: "Game Warden SSO"
+        role_attribute_path: "contains(groups[*], '/Gamewarden/grafana-server-admin') && 'GrafanaAdmin' || contains(groups[*], '/Gamewarden/grafana-admin') && 'Admin' || 'Viewer'"
+        role_attribute_strict: true
+        scopes: "openid profile email grafana"
+        token_url: "https://login.gw.local/auth/realms/gamewarden/protocol/openid-connect/token"
+
 addons:
+  authservice:
+    enabled: true
+    chains:
+      hackathon:
+        callback_uri: https://hackathon.gw.local
+        client_id: il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps
+        client_secret: "123456789"
+        match:
+          prefix: hackathon.gw.local
   keycloak:
     enabled: true
     postRenderers:
@@ -253,6 +285,10 @@ addons:
         httpPort: 8080
   argocd:
     enabled: true
+    sso:
+      client_id: "il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps" #gitleaks:allow
+      client_secret: "123456789"
+      enabled: true
     values:
       server:
         extraArgs:
