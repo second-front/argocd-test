@@ -293,6 +293,12 @@ addons:
       client_id: "il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps" #gitleaks:allow
       client_secret: "123456789"
       enabled: true
+      groups: |
+        g, /Gamewarden/Admin, role:admin
+        g, pipeline-user, role:admin
+        g, /Gamewarden/employee, role:readonly
+      provider_name: keycloak
+      sessionExpiry: 240h
     values:
       server:
         extraArgs:
