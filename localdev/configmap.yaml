@@ -291,7 +291,7 @@ addons:
     enabled: true
     sso:
       client_id: "il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps"
-      client_secret: "123456789"
+      client_secret: "123456789a"
       enabled: true
       groups: |
         g, Impact Level 2 Authorized, role:admin
