@@ -124,16 +124,10 @@ addons:
       controller:
         extraArgs:
         - --repo-server-plaintext
-      redis:
-        values: 
-          networkPolicies:
-            enabled: true
       redis-bb:
         values: 
           networkPolicies:
-            enabled: true
-        networkPolicies:
-          enabled: true
+            enabled: false
       argocd-apps:
         applications:
           - destination:
