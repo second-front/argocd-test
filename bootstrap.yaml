@@ -10,8 +10,8 @@ metadata:
   name: keycloak
   annotations:
     "app.kubernetes.io/managed-by": helm
-    "meta.helm.sh/release-name": bigbang                                                                                                │
-    "meta.helm.sh/release-namespace": bigbang
+    "meta.helm.sh/release-name": "bigbang"                                                                                                │
+    "meta.helm.sh/release-namespace": "bigbang"
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
