@@ -11,7 +11,7 @@ metadata:
   annotations:
     meta.helm.sh/release-name: bigbang
     meta.helm.sh/release-namespace: bigbang
-  label:
+  labels:
     app.kubernetes.io/managed-by: Helm
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
