@@ -294,9 +294,7 @@ addons:
       client_secret: "123456789"
       enabled: true
       groups: |
-        g, /Gamewarden/Admin, role:admin
-        g, pipeline-user, role:admin
-        g, /Gamewarden/employee, role:readonly
+        g, Impact Level 2 Authorized, role:admin
       provider_name: keycloak
       sessionExpiry: 240h
     values:
