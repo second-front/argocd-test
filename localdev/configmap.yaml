@@ -112,9 +112,7 @@ addons:
                 kind: Secret
                 name: generated-secrets
                 namespace: gw
-            info:
-              - name: url
-                value: https://code.gamewarden.io/
+
             name: gamewarden-app-prd
             namespace: argocd
             project: default
