@@ -125,9 +125,6 @@ addons:
         extraArgs:
         - --repo-server-plaintext
       redis-bb:
-        values: 
-          networkPolicy:
-            enabled: false
         networkPolicy:
           enabled: false
       argocd-apps:
