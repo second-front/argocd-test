@@ -101,6 +101,8 @@ kyvernoPolicies:
         validationFailureAction: Audit
       require-drop-all-capabilities:
         validationFailureAction: Audit
+      restrict-host-path-mount-pv:
+        validationFailureAction: Audit
 neuvector:
   sourceType: helmRepo
   enabled: false
