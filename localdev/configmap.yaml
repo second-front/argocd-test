@@ -305,6 +305,9 @@ addons:
       repoServer:
         extraArgs:
         - --disable-tls
+      dex:
+        extraArgs:
+        - --disable-tls
       controller:
         extraArgs:
         - --repo-server-plaintext
