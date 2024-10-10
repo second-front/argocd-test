@@ -16,6 +16,8 @@ argocd:
   projectOverride: "default"
   disableProjectCreation: true
 default:
+  virtualService:
+    enabled: true
 
 microservices:
   hackathon:
