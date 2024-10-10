@@ -97,7 +97,10 @@ kyvernoPolicies:
         validationFailureAction: Audit
       require-non-root-group:
         validationFailureAction: Audit
-
+      disallow-privileged-containers:
+        validationFailureAction: Audit
+      require-drop-all-capabilities:
+        validationFailureAction: Audit
 neuvector:
   sourceType: helmRepo
   enabled: false
