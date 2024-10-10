@@ -8,7 +8,7 @@ global:
     defaultImageRegistry: ghcr.io
     defaultImageRepository: second-front
 argocd:
-  wrapperAppOff: false
+  wrapperAppOff: true
   sourceNamespaces:
   - "test"
   - "argocd"
@@ -24,8 +24,23 @@ microservices:
     image:
       pullPolicy: Always
     service:
-      type: ClusterIP
       targetPort: 3000
     match:
       - uri:
           prefix: /
+
+manifests:
+  hackathonVS:
+    apiVersion: networking.istio.io/v1
+    kind: VirtualService
+    metadata:
+      name: hackathon
+    spec:
+      hosts:
+      - hackathon.gw.local
+      http:
+      - route:
+        - destination:
+            host: hackathon
+            port:
+              number: 80
