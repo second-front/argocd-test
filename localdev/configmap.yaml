@@ -106,6 +106,12 @@ addons:
       repoServer:
         extraArgs:
         - --disable-tls
+      redis-bb:
+        values: 
+          networkPolicies:
+            enabled: true
+        networkPolicies:
+          enabled: true
       argocd-apps:
         applications:
           - destination:
