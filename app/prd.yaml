@@ -1,4 +1,4 @@
 microservices:
   hackathon:
     image:
-      tag: 20241009
+      tag: test
