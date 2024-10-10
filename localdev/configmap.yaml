@@ -103,9 +103,13 @@ addons:
       server:
         extraArgs:
         - --insecure
+        - --repo-server-plaintext
       repoServer:
         extraArgs:
         - --disable-tls
+      controller:
+        extraArgs:
+        - --repo-server-plaintext
       redis-bb:
         values: 
           networkPolicies:
