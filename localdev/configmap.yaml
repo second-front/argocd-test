@@ -128,6 +128,8 @@ addons:
         values: 
           networkPolicy:
             enabled: false
+        networkPolicy:
+          enabled: false
       argocd-apps:
         applications:
           - destination:
