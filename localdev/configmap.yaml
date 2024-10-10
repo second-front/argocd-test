@@ -124,6 +124,12 @@ addons:
       controller:
         extraArgs:
         - --repo-server-plaintext
+      redis:
+        values: 
+          networkPolicies:
+            enabled: false
+        networkPolicies:
+          enabled: false
       redis-bb:
         values: 
           networkPolicies:
