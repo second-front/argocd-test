@@ -141,6 +141,7 @@ addons:
               spec:
                 tls: null
     values:
+      replicas: 1
       args:
         - "start-dev"
         - --import-realm
