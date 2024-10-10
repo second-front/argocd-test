@@ -15,9 +15,6 @@ argocd:
   - "gw"
   projectOverride: "default"
   disableProjectCreation: true
-default:
-  virtualService:
-    enabled: true
 
 microservices:
   hackathon:
@@ -36,6 +33,8 @@ manifests:
     metadata:
       name: hackathon
     spec:
+      gateways:                                                                                                                                                                               │
+        - istio-system/public
       hosts:
       - hackathon.gw.local
       http:
