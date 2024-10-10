@@ -290,7 +290,7 @@ addons:
   argocd:
     enabled: true
     sso:
-      client_id: "il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps" #gitleaks:allow
+      client_id: "il2_eb21db65-3118-4017-bfe7-86829038d3dc_apps"
       client_secret: "123456789"
       enabled: true
       groups: |
