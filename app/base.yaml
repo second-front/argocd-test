@@ -8,7 +8,7 @@ global:
     defaultImageRegistry: ghcr.io
     defaultImageRepository: second-front
 argocd:
-  wrapperAppOff: true
+  wrapperAppOff: false
   sourceNamespaces:
   - "test"
   - "argocd"
