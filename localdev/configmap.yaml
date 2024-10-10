@@ -89,6 +89,14 @@ kyvernoPolicies:
         validationFailureAction: Audit
       restrict-image-registries:
         validationFailureAction: Audit
+      restrict-host-path-write:
+        validationFailureAction: Audit
+      restrict-host-path-mount:
+        validationFailureAction: Audit
+      require-non-root-user:
+        validationFailureAction: Audit
+      require-non-root-group:
+        validationFailureAction: Audit
 
 neuvector:
   sourceType: helmRepo
