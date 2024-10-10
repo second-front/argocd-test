@@ -117,7 +117,7 @@ addons:
                 value: https://code.gamewarden.io/
             name: gamewarden-app-prd
             namespace: argocd
-            project: gamewarden-app-prd
+            project: default
             sources:
               - helm:
                   valueFiles:
