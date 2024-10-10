@@ -115,7 +115,11 @@ sso:
   client_secret: "123456789"
   name: SSO
   url: https://login.gw.local/auth/realms/gamewarden
-
+  # certificateAuthority:
+  #   cert: |
+  #     {{- range .Cert }}
+  #     {{ . -}}
+  #     {{ end }}
 
 grafana:
   values:
