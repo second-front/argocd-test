@@ -1,0 +1,11 @@
+global:
+  applicationName: minio 
+  customerName: placeholder
+  impactLevel: placeholder
+  environment: placeholder
+
+microservices:
+  virusscan:
+    image:
+      repository: registry.gamewarden.io/ironbank-proxy/ironbank/opensource/clamav/clamav
+      tag: "2.2.2"
